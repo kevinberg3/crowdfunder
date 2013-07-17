@@ -4,8 +4,8 @@ FactoryGirl.define do
   factory :project do
     user
     title "Manhattan Project"
-    teaser: "Top secret" 
-    description: "It is a thing to do other things" 
-    goal: 150000
+    teaser "Top secret" 
+    description "It is a thing to do other things"
+    goal 150000
   end
 end
