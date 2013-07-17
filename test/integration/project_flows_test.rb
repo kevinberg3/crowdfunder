@@ -34,7 +34,7 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
   end
 
   test "navigation" do
-    # Create a project to visit its show page at the end of the test
+
     project1 = FactoryGirl.create(:project, :title => "Project 1")
     # Visit the root url
     visit "/"
