@@ -1,5 +1,8 @@
 Crowdfunder::Application.routes.draw do
  
   resources :projects
-  root :to => '/'
+
+  get '/', to: 'static_page#index'
+  
+  root to: 'static_page#index'
 end

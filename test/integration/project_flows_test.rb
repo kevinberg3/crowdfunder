@@ -40,7 +40,7 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
     assert_equal projects_path, current_path
     # Assert the projects nav element is active
     assert_equal "Projects", find('.navbar ul li.active a').text
-  end
+    end
 
 
 end
