@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to root_path
     else
-      flash[:error] = "Failed to register"
+      flash[:alert] = "Try again"
       redirect_to users_path
     end
   end
