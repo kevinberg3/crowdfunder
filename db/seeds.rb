@@ -1,5 +1,5 @@
 User.destroy_all
-Project.destroy_all
+Project.destroy_alpl
 
 user = User.create!(first_name: "James", last_name: "Cook", email: "iamsocool@me.com", password: "funboy")
 
