@@ -43,12 +43,10 @@ class My::ProjectsController < ApplicationController
       flash[:notice] = "Project Updated"
     else
       render 'edit'
-      # redirect_to my_project_path(:id)
       flash[:error] = "doesn't exist"
     end
 
   end
-
 
   private
 

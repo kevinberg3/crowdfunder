@@ -1,6 +1,8 @@
+<a href="/my/projects/new" class="btn btn-large btn-primary">Launch New Project</a>
+</br></br></br>
 
-  <%= @projects.each do |project| %> 
+  <% @projects.each do |project| %> 
   <div class="project">
-    <h1> <%= project.title %> </h1>
+    <ul> <%= project.title %> </ul>
   </div>
   <% end %> 
