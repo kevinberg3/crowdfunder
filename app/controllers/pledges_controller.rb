@@ -1,24 +1,32 @@
 class PledgesController < ApplicationController
 
+  before_filter :load_project
+  before_filter :require_login
+
   def new
     @pledge = Pledge.new
   end
 
   def create
-    @pledge = Pledge.new(pledge_params)
+    @pledge = Pledge.new(user_id: current_user.id, project_id: params[:project_id], amount: params[:pledge][:amount])
 
     if @pledge.save
-      # flash[:notice] = 
-      redirect_to root_path
-
+      redirect_to project_path(params[:project_id])
+      flash[:notice] = "Thanks for pledging"
     else
+      redirect_to project_path(params[:project_id])
       flash[:error] = "can't be blank"
+
+
     end
-  end
+    
+    end
 
 
   private
-  def pledge_params
-    params.require(:pledge).permit(:amount, :user_id, :project_id)
+
+  def load_project
+    @project = Project.find(params[:project_id])
+  end
 
 end

@@ -1,3 +1,5 @@
 <h1> <%= @project.title %> </h1>
 
+<%= link_to '<button type="button">Support This Project</button>'.html_safe, new_project_pledge_path(@project.id) %>
+
 

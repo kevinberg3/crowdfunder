@@ -1,0 +1,10 @@
+<h1> <%= @project.title %> </h1>
+
+<%= form_for [@project, @pledge] do |f| %> 
+
+    <%= f.label :amount %>
+    <%= f.number_field :amount %> 
+
+    <%= f.submit "Pledge Now" %> 
+
+<% end %> 

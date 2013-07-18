@@ -9,9 +9,9 @@ class PledgeFlowsTest < ActionDispatch::IntegrationTest
   test "requires authenticated user" do 
     visit project_path(@project)
 
-    click_link 'Back This Project'
+    click_link 'Support This Project'
 
-    assert_equal new_session_path, current_path
+    assert_equal login_path, current_path
     assert page.has_content?("Please login first.")
   end
 
@@ -19,7 +19,7 @@ class PledgeFlowsTest < ActionDispatch::IntegrationTest
     user = setup_signed_in_user
     
     visit project_path(@project)
-    click_link 'Back This Project'
+    click_link 'Support This Project'
     
     # Should be at pledge submission page, with 0 pledges in the databases currently
     assert_equal new_project_pledge_path(@project), current_path
