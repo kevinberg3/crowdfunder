@@ -5,6 +5,10 @@ require 'rails/test_help'
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
 
+  teardown do 
+    DatabaseCleaner.clean
+  end
+
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   #
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
@@ -44,6 +48,7 @@ class ActionDispatch::IntegrationTest
     fill_in "password", with: pass
     click_button "Login"
 
+    user
     # No asserts because testing is not done inside of a helper method
   end
 end
