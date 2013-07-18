@@ -10,7 +10,7 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="#">CrowdFunder</a>
+      <a class="brand" href="/">CrowdFunder</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="<%= 'active' if current_page? root_path %>">
@@ -19,13 +19,36 @@
           <li class="<%= 'active' if params[:controller] == 'projects'%>">
             <%= link_to 'Projects', :projects %>
           </li>
+
+          <% if current_user %>
+            <li>
+              <%= link_to "Logout", logout_path %>
+            </li>
+          <% else %>
+            <li class="<%= 'active' if current_page? signup_path %>"> 
+              </i><%= link_to "Sign Up", signup_path %>
+            </li>
+            <li class="<%= 'active' if current_page? login_path %>">
+              <%= link_to "Login", login_path %>
+            </li>
+          <% end %> 
+
         </ul>
+
       </div>
+
     </div>
+
   </div>
 </div>
-
+<div class="container">
+  <div> 
+    <% flash.each do |key, value| %>
+    <div class="<%= key %>"><%= value %></div>
+    <% end %>
+  </div> 
 <%= yield %>
+</div>
 
 </body>
 </html>

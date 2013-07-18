@@ -20,4 +20,9 @@ class ActionDispatch::IntegrationTest
   include Capybara::DSL
 
   Capybara.app = Crowdfunder::Application
+
+  teardown do
+    Capybara.reset_sessions! # forget the simulated browser state
+    Capybara.use_default_driver # revert Capybara.current_driver to Capybara.default_driver
+  end
 end
