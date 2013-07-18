@@ -2,6 +2,7 @@ class Pledge < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
   
+  
   validates_presence_of :user, on: :create
   validates_presence_of :project, on: :create
   validates_presence_of :amount, message: 'is not a number' 

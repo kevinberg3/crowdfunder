@@ -19,7 +19,7 @@ class My::ProjectFlowsTest < ActionDispatch::IntegrationTest
 
     project = FactoryGirl.create :project, user: me, title: "My Project"
 
-    visit edit_my_project_path(project)
+    visit edit_my_project_path(project.id)
 
     fill_in 'project[title]', with: "It is really my project"
 
