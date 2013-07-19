@@ -7,6 +7,10 @@ gem 'nokogiri'
 gem 'pg' #replcaing sqlite with postgres
 gem 'sorcery'
 
+gem 'jquery-rails'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 2.2.2.0'

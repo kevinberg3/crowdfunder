@@ -1,6 +1,7 @@
 <h1> <%= @project.title %> </h1></br>
-  <ul><strong>Summary: </strong><%= @project.teaser %> </ul></br></br>
-  <ul><strong>Description: </strong><%= @project.description %> </ul>
+  <p><strong>Summary: </strong><%= @project.teaser %> </p>
+  <p><strong>Description: </strong><%= @project.description %> </p>
+  <p><strong>Goal: </strong>$<%= @project.goal %></font></p>
 
 <%= link_to '<button type="button">Support This Project</button>'.html_safe, new_project_pledge_path(@project.id) %>
 
