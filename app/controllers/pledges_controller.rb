@@ -9,9 +9,9 @@ class PledgesController < ApplicationController
 
   def create
     @pledge = Pledge.new(user_id: current_user.id, project_id: params[:project_id], amount: params[:pledge][:amount])
-
+    
     if @pledge.save
-      UserMailer.pledge_confirmation(current_user).deliver
+      UserMailer.pledge_confirmation(@pledge.project.user, @pledge).deliver
       redirect_to project_path(params[:project_id])
       flash[:notice] = "Thanks for pledging"
     else
