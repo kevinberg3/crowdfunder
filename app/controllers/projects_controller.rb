@@ -16,6 +16,10 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
   end
 
+  def images
+    @project = Project.find(params[:id])
+  end
+
   private
 
   def project_params

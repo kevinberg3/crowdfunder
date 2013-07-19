@@ -11,6 +11,9 @@ gem 'sorcery'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 
+# use carrierwave for uploading of images
+gem 'carrierwave'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 2.2.2.0'

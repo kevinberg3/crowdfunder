@@ -2,19 +2,27 @@
  
   <%= form_for @project, :url => my_project_path(@project.id) do |f| %> 
 
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-
-    <%= f.label :teaser %>
-    <%= f.text_field :teaser %> 
-
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-
-    <%= f.label :goal %>
-    <%= f.text_field :goal %></br></br>
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      </p>
+      <p>
+      <%= f.label :teaser %>
+      <%= f.text_field :teaser %> 
+      </p>
+      <p>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+      </p>
+      <p>
+      <%= f.label :goal %>
+      <%= f.text_field :goal %>
+      </p>
+      <p>
+      <h3> Upload Image <h3>
+      <%= f.file_field :image %>
+      </p>
+      <p>
     <%= f.submit "Update Project" %> 
-
-    
- 
+    </p>
   <% end %> 
