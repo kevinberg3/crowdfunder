@@ -7,7 +7,7 @@ gem 'nokogiri'
 gem 'pg' #replcaing sqlite with postgres
 gem 'sorcery'
 
-gem 'jquery-rails'
+
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 

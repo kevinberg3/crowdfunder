@@ -35,7 +35,7 @@ class ActionDispatch::IntegrationTest
     DatabaseCleaner.clean       # Erase what we put into the database during the tests
     Capybara.reset_sessions! # forget the simulated browser state
     Capybara.use_default_driver # revert Capybara.current_driver to Capybara.default_driver
-
+   
   end
 
   # This is a helper method we can call anywhere in the tests

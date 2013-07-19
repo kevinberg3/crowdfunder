@@ -9,7 +9,7 @@ project2 = user.projects.create!(title: "Airport Singles", teaser: "Singles that
 
 project3 = user.projects.create!(title: "Poor guy need food", teaser: "I'm so hungry", description: "I need to buy some groceries", goal: 35)
 
-100.times do |i|
+50.times do |i|
   project1 = user.projects.create!(title: "Project #{i}", teaser: "Teaser text #{i}",
     description: "description #{i}", goal: 513000)
 end
