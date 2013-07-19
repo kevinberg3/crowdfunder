@@ -3,6 +3,6 @@
 
   <% @projects.each do |project| %> 
   <div class="project">
-    <ul> <%= project.title %> </ul>
+    <li><%= link_to project.title, edit_my_project_path(project.id) %></li>
   </div>
   <% end %> 
