@@ -24,7 +24,7 @@
             <li>
               <%= link_to "Logout", logout_path %>
             </li>
-            <li class="<%=  'active' if current_page? my_projects_path %>">
+            <li class="<%=  'active' if params[:controller] == 'my/projects' %>">
               <%= link_to "My Projects", my_projects_path %>
             </li>
           <% else %>
