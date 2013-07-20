@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  belongs to :project
+  belongs_to :project
   mount_uploader :image, ImageUploader
 
   validates :project, presence: true
