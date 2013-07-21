@@ -19,10 +19,8 @@
       <%= f.text_field :goal %>
       </p>
       <p>
-      <h3> Upload Image <h3>
-      <%= f.file_field :image %>
-      </p>
-      <p>
     <%= f.submit "Update Project" %> 
     </p>
   <% end %> 
+
+<%= link_to "Manage Images", my_project_images_path(@project) %>

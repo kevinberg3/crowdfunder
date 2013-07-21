@@ -22,7 +22,7 @@ class My::ProjectsController < ApplicationController
   end
 
   def show
-
+    @project = Project.find(params[:id])
   end
 
 
@@ -46,6 +46,18 @@ class My::ProjectsController < ApplicationController
       flash[:error] = "doesn't exist"
     end
 
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+
+    if @project.destroy
+      redirect_to my_projects_path
+      flash[:notice] = "Project Deleted"
+    else
+      flash[:alert] = "Oops! Something went wrong. Project could not be deleted."
+      redirect_to my_projects_path(@project)
+    end
   end
 
   private
