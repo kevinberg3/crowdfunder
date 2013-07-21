@@ -1,1 +1,21 @@
 <h1>Images for <%= @project.title %></h1>
+
+<% if @images.count > 0 %>
+  <%= @images.each do |image| %>
+    <%= image_tag "#{image.image}" %>
+  <% end %>
+<% else %>
+  <p>No images currently exist for <%= @project.title %></p>
+<% end %>
+
+<h4>Upload images</h4>
+
+<%= form_for [:my, @project, @image] do  |f| %>
+  <%= f.file_field :image %>
+  <%= f.submit 'Upload Image', class: 'btn' %>
+<% end %>
+
+<%#= form_for :images do |f| %>
+  <%#= f.file_field :image %>
+  <%#= f.submit "Upload Image" %>
+<%# end %>
