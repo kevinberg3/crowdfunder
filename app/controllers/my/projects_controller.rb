@@ -53,7 +53,7 @@ class My::ProjectsController < ApplicationController
 
     if @project.destroy
       redirect_to my_projects_path
-      flash[:notice] = "Project Deleted"
+      flash[:notice] = "Deleted!"
     else
       flash[:alert] = "Oops! Something went wrong. Project could not be deleted."
       redirect_to my_projects_path(@project)
