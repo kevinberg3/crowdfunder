@@ -11,14 +11,19 @@ class My::ImagesController < ApplicationController
     # @images = @project.images.load
   end
 
+ 
+
   def create
     @image = @project.images.build(image_params)
-    if @image.save
-      redirect_to [:my, @project, :images], notice: "Image uploaded. Check it out below."
-    else
-      @images = @project.images.order(:id)
-      render :index
+    # @project.images.build(image_params)
+   if @image.save
+         redirect_to [:my, @project, :images], notice: "Image uploaded. Check it out below."
+       else
+         @images = @project.images.order(:id)
+         render :index
+  
     end
+
 
 
     # @image = Image.new(image_params)
@@ -31,10 +36,10 @@ class My::ImagesController < ApplicationController
     # end
   end
 
-  private
+  protected
 
   def require_project
-    @project = current_user.projects.find(params[:project_id])
+    @project = current_user.projects.find params[:project_id]
   end
 
   def nav_state
@@ -42,7 +47,7 @@ class My::ImagesController < ApplicationController
   end
 
   def image_params
-    params.require(:image).permit(:image, :product_id)
+    params.require(:image).permit(:image, :project_id)
   end
   
 end

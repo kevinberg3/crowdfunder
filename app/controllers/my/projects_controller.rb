@@ -6,11 +6,11 @@ class My::ProjectsController < ApplicationController
   end 
 
   def new
-    @project = Project.new
+    @project = current_user.projects.build
   end
 
   def create
-    @project = Project.new(my_project_params)
+    @project = current_user.projects.build(my_project_params)
 
     if @project.save
       redirect_to my_projects_path
@@ -63,6 +63,6 @@ class My::ProjectsController < ApplicationController
   private
 
   def my_project_params
-    params.require(:project).permit(:title, :teaser, :description, :goal, :user)
+    params.require(:project).permit(:title, :teaser, :description, :goal, :user_id)
   end
 end

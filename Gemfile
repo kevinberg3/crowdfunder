@@ -13,7 +13,7 @@ gem 'kaminari-bootstrap'
 
 # use carrierwave for uploading of images
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', '~> 2.13.2'
 gem "mini_magick"
 
 # Use SCSS for stylesheets
