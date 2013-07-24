@@ -28,14 +28,15 @@ class My::ImagesController < ApplicationController
     #
     @project = Project.find(params[:project_id])
     @image =@project.images.build
+    # build ===
+    # @image = Image.new
+    # @image.project_id = @project.id
     @image.image = params[:image][:image]
     @image.user_id = current_user.id
-    binding.pry
    if @image.save
          # redirect_to [:my, @project, :images], notice: "Image uploaded. Check it out below."
          redirect_to my_project_images_path(@project)
        else
-         @images = @project.images.order(:id)
          render :index
 
     end
