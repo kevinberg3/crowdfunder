@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :projects
   has_many :pledges
+  has_many :images, through: :projects
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create

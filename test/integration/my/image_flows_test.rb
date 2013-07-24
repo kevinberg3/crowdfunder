@@ -2,7 +2,7 @@ require 'test_helper'
 
 class My::ImageFlowsTest < ActionDispatch::IntegrationTest
   setup do 
-      @user = setup_signed_in_user
+      @user = setup_signed_in_user  
       @project = FactoryGirl.create :project, user: @user
   end
 

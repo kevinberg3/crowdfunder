@@ -12,6 +12,10 @@
 
 <%= form_for [:my, @project, @image] do  |f| %>
   <%= f.file_field :image %>
+  <p>
+      <%= f.label :remote_image_url, "or image URL" %><br />
+      <%= f.text_field :remote_image_url %>
+  </p>
   <%= f.submit 'Upload Image', class: 'btn' %>
 <% end %>
 

@@ -6,7 +6,7 @@ gem 'rails', '4.0.0'
 gem 'nokogiri'
 gem 'pg' #replcaing sqlite with postgres
 gem 'sorcery'
-
+gem 'binding_of_caller'
 
 gem 'kaminari'
 gem 'kaminari-bootstrap'

@@ -1,23 +1,32 @@
 class My::ImagesController < ApplicationController
 
-  before_filter :require_login
+  # before_filter :require_login
   before_filter :require_project
 
   def index
     @images = @project.images.order(:id)
     @image = @project.images.build
 
-    # @project = current_user.projects.find(params[:project_id])
+    # 
     # @images = @project.images.load
   end
 
+  def new
+    @image = @project.images
+  end
  
 
   def create
-    @image = @project.images.build(image_params)
-    # @project.images.build(image_params)
+    # @image = current_user.projects.find(params[:project_id])
+    @image = @project.images.build(image: params[:image][:image],
+      user: current_user)
+    # @project.images.build(image: params[:image][:image],
+    #   user_id: current_user)
+    # @project = Project.find(image_params)
+    # @project.update_attributes(params[:id])
    if @image.save
-         redirect_to [:my, @project, :images], notice: "Image uploaded. Check it out below."
+         # redirect_to [:my, @project, :images], notice: "Image uploaded. Check it out below."
+         redirect_to my_project_images_path(@project)
        else
          @images = @project.images.order(:id)
          render :index
@@ -39,7 +48,7 @@ class My::ImagesController < ApplicationController
   protected
 
   def require_project
-    @project = current_user.projects.find params[:project_id]
+    @project = Project.find params[:project_id]
   end
 
   def nav_state
@@ -47,7 +56,7 @@ class My::ImagesController < ApplicationController
   end
 
   def image_params
-    params.require(:image).permit(:image, :project_id)
+    params.require(:image).permit(:image, :project_id, :remote_image_url, :user_id)
   end
   
 end
