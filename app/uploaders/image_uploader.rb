@@ -30,7 +30,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-  
+
   #Resize uploaded file to fit to site
   # version :resize do
   #   process resize_to_fit: [800, 800]
