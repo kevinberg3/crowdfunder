@@ -1,7 +1,6 @@
 <h1>Images for <%= @project.title %></h1>
 
 <% if @images.count > 0 %>
-<% binding.pry %>
   <% @images.each do |image| %>
     <%= image_tag image.image %>
   <% end %>
