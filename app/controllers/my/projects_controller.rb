@@ -21,9 +21,9 @@ class My::ProjectsController < ApplicationController
     end
   end
 
-  def show(pledges)
+  def show
     @project = Project.find(params[:id])
-    @pledges = pledges
+    pledges = @project.pledges
   end
 
 

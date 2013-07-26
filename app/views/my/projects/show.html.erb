@@ -5,7 +5,11 @@
 <p><%= @project.description %></p>
 
 <hr />
-<h3>Total Raised: $<%= @project.pledges.amount.sum %></h3>
+  <% total = 0 %>
+  <% @project.pledges.each do |pledge| %>
+  <% total += pledge.amount %>
+  <% end %>
+  <h3>Total Raised: $<%= total %></h3>
 
 <h3>Goal: $<%= @project.goal %></h3>
 <div class="progress progress-success progress-striped">
