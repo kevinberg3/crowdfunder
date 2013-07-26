@@ -1,5 +1,10 @@
 <h1><%= @project.title %></h1>
 
+<% @images.each do |image| %>
+  <%= image_tag image.image %>
+<% end %>
+
+
 <p class="lead"><%= @project.teaser %></p>
 
 <p><%= @project.description %></p>

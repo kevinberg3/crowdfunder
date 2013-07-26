@@ -6,6 +6,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @image = @project.images.build
+    @images = @project.images
   end
 
   def new
