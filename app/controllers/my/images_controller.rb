@@ -3,8 +3,8 @@ class My::ImagesController < ApplicationController
   before_filter :require_project
 
   def index
-    @image = @project.images.build
     @images = @project.images
+    @image = @project.images.build
   end
 
   def new
@@ -24,8 +24,13 @@ class My::ImagesController < ApplicationController
        else
          render :index
     end
-end
+  end
 
+
+  def destroy
+    @project.images.find(params[:id]).destroy
+    redirect_to my_project_images_path(@project), notice: "Image deleted."
+  end
   protected
 
   def require_project
