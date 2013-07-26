@@ -10,11 +10,11 @@
   <% total += pledge.amount %>
   <% end %>
   <h3>Total Raised: $<%= total %></h3>
-
-<h3>Goal: $<%= @project.goal %></h3>
-<div class="progress progress-success progress-striped">
-  <div class="bar" style="width: 35%;">35% Funded</div>
-</div>
+  <% completion = (total.to_f / @project.goal) * 100 %> </p> 
+  <h3>Goal: $<%= @project.goal %></h3>
+  <div class="progress">
+    <div class="bar" style="width:<%= completion.ceil %>%;"><%= completion.ceil%>% Funded</div>
+  </div>
 
 <hr />
 
