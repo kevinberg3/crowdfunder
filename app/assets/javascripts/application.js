@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.flexslider-min.js
 //= require_tree .
+$(window).load(function() {
+  $('.flexslider').flexslider();
+});
